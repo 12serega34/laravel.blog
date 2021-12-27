@@ -21,9 +21,8 @@
     <section class="section lb">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                    @include('layouts.sidebar')
-                </div><!-- end col -->
+                @include('layouts.sidebar')
+
 
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="page-wrapper">
