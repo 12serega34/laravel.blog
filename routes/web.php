@@ -19,7 +19,7 @@ Route::get('/category/{slug}', 'App\Http\Controllers\CategoryController@show')->
 Route::get('/blog', 'App\Http\Controllers\HomeController@blog')->name('blog.single');
 Route::get('/contact', 'App\Http\Controllers\HomeController@contact')->name('contact');
 Route::get('/search', 'App\Http\Controllers\SearchController@index')->name('search');
-Route::resource('/comments', 'App\Http\Controllers\CommentController');
+Route::post('/comments', 'App\Http\Controllers\CommentController@store')->name('comment.store');
 Route::post('/subscribe', 'App\Http\Controllers\SubscribeController@store')->name('subscribe');
 
 

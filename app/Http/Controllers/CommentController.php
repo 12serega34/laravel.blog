@@ -16,8 +16,9 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
+
         $rules = [
             'content' => 'required|min:3|max:1000',
         ];
@@ -28,14 +29,10 @@ class CommentController extends Controller
         ];
         Validator::make($request->all(), $rules, $messages)->validate();
 
-        $data = [
-            'content' => $request->content,
-            'post_id' => $request->post_id,
-            'user_id' => Auth::user()->id,
-        ];
+        Comment::create($request->all());
 
-        Comment::create($data);
         return redirect()->back()->with('success', 'Комментарий опубликован');
+
     }
 
     /**

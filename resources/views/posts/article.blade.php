@@ -126,7 +126,7 @@
                                 <h4 class="small-title">Оставить комментарий</h4>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <form class="form-wrapper" name="comment" method="post" action="{{ route('comments.store') }}">
+                                        <form class="form-wrapper" name="comment" method="post" action="{{ route('comment.store') }}">
                                             @csrf
                                             <textarea name="content" class="form-control" placeholder="Оставьте комментарий"></textarea>
                                             <input type="hidden" name="post_id" value="{{ $post->id }}">
